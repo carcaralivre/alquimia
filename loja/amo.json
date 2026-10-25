@@ -10,8 +10,7 @@
     "pt-BR": "Extensão para Firefox que muda qualquer página com um pedido em linguagem natural.\n\nÉ um Stylus/Greasemonkey em que, em vez de escrever o código, você descreve o que quer: \"esconde a barra lateral\", \"deixa a fonte dos comentários maior\", \"tira o autoplay dos vídeos\". O modelo escreve o CSS ou o JS, a edição é aplicada na hora e fica salva para o domínio.\n\n- Clique no ícone da barra: abre um diálogo na própria página. Escreva o pedido e aperte Enter.\n- Apontar elemento: clique em \"Apontar elemento\" e depois no pedaço da página a que o pedido se refere.\n- Desfazer: depois de aplicar, o diálogo mostra o nome da edição e um botão de desfazer.\n- Alterar uma edição: peça de novo no mesmo site; o modelo vê as edições existentes e substitui a que for o caso.\n- Configurações: provedor, chave da API, escolha do modelo (com preços) e a lista de sites e edições, cada uma com interruptor e botão de apagar.\n\nComo funciona\n- As edições valem para o domínio, em todas as páginas. O CSS entra a cada carregamento; o JS roda como user script (API userScripts, Firefox 153+), com uma permissão que o Firefox pede à parte. Sem ela, só o CSS funciona.\n- Dois provedores: OpenRouter (qualquer modelo) ou a API da Anthropic. Os dois são cobrados por uso, na sua própria conta. A chave fica no seu navegador e só é enviada ao provedor escolhido.\n\nVeja a política de privacidade: o pedido vai para o provedor junto com o título, a URL e um esboço da estrutura da página."
   },
   "categories": [
-    "appearance",
-    "other"
+    "appearance"
   ],
   "homepage": {
     "pt-BR": "https://github.com/carcaralivre/alquimia"
