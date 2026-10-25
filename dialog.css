@@ -1,0 +1,21 @@
+/* Only the host element and the picker overlay live in the page; everything
+   else is inside the shadow root, styled from dialog.js. */
+
+#alquimia-host {
+  all: initial;
+  position: fixed;
+  inset: 0;
+  z-index: 2147483647;
+  pointer-events: none;
+}
+
+#alquimia-pick {
+  position: fixed;
+  z-index: 2147483646;
+  pointer-events: none;
+  box-sizing: border-box;
+  border: 2px solid #9059ff;
+  border-radius: 4px;
+  background: rgba(144, 89, 255, .12);
+  transition: top .06s, left .06s, width .06s, height .06s;
+}

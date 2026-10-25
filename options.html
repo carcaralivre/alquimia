@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <title>Alquimia</title>
+  <style>
+    :root { color-scheme: light dark; font: message-box; font-size: 14px; }
+    body { margin: 0 auto; padding: 24px 20px 48px; max-width: 720px; display: grid; gap: 28px; }
+    h1 { display: flex; align-items: center; gap: 10px; margin: 0; font-size: 20px; }
+    h1 img { width: 26px; height: 26px; }
+    h2 { margin: 0 0 10px; font-size: 15px; }
+    section { display: grid; gap: 10px; }
+    label { display: grid; gap: 4px; }
+    input[type="text"], input[type="password"], input[type="search"], select { font: inherit; padding: 6px 8px; width: 100%; box-sizing: border-box; }
+    select[size] { padding: 0; }
+    select[size] option { padding: 5px 8px; }
+    .help { color: GrayText; font-size: 13px; margin: 0; }
+    .help a { color: inherit; }
+    .providers { display: flex; gap: 16px; }
+    .providers label { display: flex; align-items: center; gap: 6px; }
+    .price { font-size: 13px; }
+    .site { border: 1px solid color-mix(in srgb, CanvasText 15%, transparent); border-radius: 10px; overflow: hidden; }
+    .site > header { display: flex; align-items: center; gap: 10px; padding: 10px 12px; background: color-mix(in srgb, CanvasText 5%, transparent); }
+    .site > header b { flex: 1; font-size: 15px; }
+    .edit { display: flex; align-items: center; gap: 10px; padding: 10px 12px; border-top: 1px solid color-mix(in srgb, CanvasText 10%, transparent); }
+    .edit .info { flex: 1; min-width: 0; display: grid; gap: 2px; }
+    .edit .title { font-weight: 600; }
+    .edit .prompt { color: GrayText; font-size: 13px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+    .edit .kind { font-size: 11px; font-family: ui-monospace, Menlo, monospace; color: GrayText; }
+    .edit[data-enabled="false"] .title { opacity: .5; text-decoration: line-through; }
+    details summary { cursor: pointer; font-size: 12px; color: GrayText; }
+    pre { margin: 6px 0 0; padding: 8px; font-size: 12px; white-space: pre-wrap; background: color-mix(in srgb, CanvasText 5%, transparent); border-radius: 6px; max-height: 240px; overflow: auto; }
+    button { font: inherit; }
+    button.danger { color: #c2372f; }
+    .empty { color: GrayText; }
+    #saved { color: GrayText; font-size: 13px; }
+    [hidden] { display: none !important; }
+  </style>
+</head>
+<body>
+  <h1><img src="icons/alquimia.svg" alt=""> Alquimia</h1>
+
+  <section>
+    <h2>Modelo</h2>
+    <div class="providers">
+      <label><input type="radio" name="provider" value="openrouter"> OpenRouter</label>
+      <label><input type="radio" name="provider" value="anthropic"> Anthropic</label>
+    </div>
+    <label>
+      Chave da API
+      <input id="apiKey" type="password" autocomplete="off" spellcheck="false">
+    </label>
+    <p class="help" id="keyHelp"></p>
+    <label>
+      Modelo
+      <input id="filter" type="search" placeholder="Filtrar…" hidden>
+    </label>
+    <select id="models" size="8" hidden></select>
+    <p class="help" id="modelHelp"></p>
+    <p class="help" id="spent"></p>
+    <p id="saved"></p>
+  </section>
+
+  <section>
+    <h2>Edições em JavaScript</h2>
+    <p class="help" id="jsHelp"></p>
+    <div><button id="grantJs" type="button">Permitir edições em JavaScript</button></div>
+  </section>
+
+  <section>
+    <h2>Edições por site</h2>
+    <div id="sites"></div>
+  </section>
+
+  <script src="defaults.js"></script>
+  <script src="options.js"></script>
+</body>
+</html>
